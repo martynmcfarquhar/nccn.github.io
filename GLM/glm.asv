@@ -21,11 +21,6 @@ StandardError = round(SE,3);
 table(Estimate,StandardError,'RowNames',Effects)
 
 % Statistics toolbox needed below here
-figure('Position', [100 100 1024 300])
-for i = 1:3
-    subplot(1,3,i);
-    addedvarplot(X(:,2:4),Y,i,[true true true]);
-    ylabel('MPG');
-    xlabel(Effects{i+1});
-    title('');
-end
+subplot(1,1,3);
+addedvarplot(X(:,2:4),Y,1);
+

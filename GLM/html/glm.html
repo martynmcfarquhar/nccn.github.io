@@ -88,6 +88,16 @@ Estimate = round(Beta,3);
 StandardError = round(SE,3);
 
 table(Estimate,StandardError,<span class="string">'RowNames'</span>,Effects)
+
+<span class="comment">% Statistics toolbox needed below here</span>
+figure(<span class="string">'Position'</span>, [100 100 1024 300])
+<span class="keyword">for</span> i = 1:3
+    subplot(1,3,i);
+    addedvarplot(X(:,2:4),Y,i,[true true true]);
+    ylabel(<span class="string">'MPG'</span>);
+    xlabel(Effects{i+1});
+    title(<span class="string">''</span>);
+<span class="keyword">end</span>
 </pre><pre class="codeoutput">
 ans =
 
@@ -101,7 +111,7 @@ ans =
     Weight           -4.945         3.075    
     Transmission     -1.715         2.442    
 
-</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020a</a><br></p></div><!--
+</pre><img vspace="5" hspace="5" src="glm_01.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 Y = [21 21 22.8 21.4 18.7 18.1]';
 
@@ -124,6 +134,16 @@ Estimate = round(Beta,3);
 StandardError = round(SE,3);
 
 table(Estimate,StandardError,'RowNames',Effects)
+
+% Statistics toolbox needed below here
+figure('Position', [100 100 1024 300])
+for i = 1:3
+    subplot(1,3,i);
+    addedvarplot(X(:,2:4),Y,i,[true true true]);
+    ylabel('MPG');
+    xlabel(Effects{i+1});
+    title('');
+end
 
 ##### SOURCE END #####
 --></body></html>
