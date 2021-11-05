@@ -73,7 +73,6 @@ L = [1 -1 0 0];
 <span class="comment">% load design matrix</span>
 load(<span class="string">'X.mat'</span>);
 iXX = inv(X'*X);
-df  = size(X,1) - size(X,2);
 
 <span class="comment">% Load parameter estimates</span>
 Header = niftiinfo(<span class="string">'beta_0001.nii'</span>);
@@ -127,7 +126,6 @@ L = [1 -1 0 0];
 % load design matrix
 load('X.mat');
 iXX = inv(X'*X);
-df  = size(X,1) - size(X,2);
 
 % Load parameter estimates
 Header = niftiinfo('beta_0001.nii');
