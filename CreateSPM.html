@@ -104,7 +104,7 @@ TStatistic    = zeros(XDim,YDim,ZDim);
             <span class="comment">% Check we're inside the brain</span>
             <span class="keyword">if</span> (~isnan(Con))
                 SE = sqrt(Variance(x,y,z) * (L * iXX * L'));
-                T    = Con / SE;
+                T  = Con / SE;
 
                 <span class="comment">% Save values to images</span>
                 Contrast(x,y,z)      = Con;
@@ -162,7 +162,7 @@ for x = 1:XDim
             % Check we're inside the brain
             if (~isnan(Con))
                 SE = sqrt(Variance(x,y,z) * (L * iXX * L'));
-                T    = Con / SE;
+                T  = Con / SE;
                 
                 % Save values to images
                 Contrast(x,y,z)      = Con;
