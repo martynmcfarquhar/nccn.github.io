@@ -95,9 +95,9 @@ Contrast      = zeros(XDim,YDim,ZDim);
 StandardError = zeros(XDim,YDim,ZDim);
 TStatistic    = zeros(XDim,YDim,ZDim);
 
-<span class="keyword">for</span> x = 1:Header.ImageSize(1)
-    <span class="keyword">for</span> y = 1:Header.ImageSize(2)
-        <span class="keyword">for</span> z = 1:Header.ImageSize(3)
+<span class="keyword">for</span> x = 1:XDim
+    <span class="keyword">for</span> y = 1:YDim
+        <span class="keyword">for</span> z = 1:ZDim
 
             Con = L * Beta(:,x,y,z);
 
@@ -153,9 +153,9 @@ Contrast      = zeros(XDim,YDim,ZDim);
 StandardError = zeros(XDim,YDim,ZDim);
 TStatistic    = zeros(XDim,YDim,ZDim);
 
-for x = 1:Header.ImageSize(1)
-    for y = 1:Header.ImageSize(2)
-        for z = 1:Header.ImageSize(3)
+for x = 1:XDim
+    for y = 1:YDim
+        for z = 1:ZDim
             
             Con = L * Beta(:,x,y,z);
             
