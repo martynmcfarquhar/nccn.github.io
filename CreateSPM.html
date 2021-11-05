@@ -98,19 +98,15 @@ TStatistic    = zeros(XDim,YDim,ZDim);
 <span class="keyword">for</span> x = 1:XDim
     <span class="keyword">for</span> y = 1:YDim
         <span class="keyword">for</span> z = 1:ZDim
-
+            <span class="comment">% Calculate results for this voxel</span>
             Con = L * Beta(:,x,y,z);
+            SE  = sqrt(Variance(x,y,z) * (L * iXX * L'));
+            T   = Con / SE;
 
-            <span class="comment">% Check we're inside the brain</span>
-            <span class="keyword">if</span> (~isnan(Con))
-                SE = sqrt(Variance(x,y,z) * (L * iXX * L'));
-                T  = Con / SE;
-
-                <span class="comment">% Save values to images</span>
-                Contrast(x,y,z)      = Con;
-                StandardError(x,y,z) = SE;
-                TStatistic(x,y,z)    = T;
-            <span class="keyword">end</span>
+            <span class="comment">% Save results to images</span>
+            Contrast(x,y,z)      = Con;
+            StandardError(x,y,z) = SE;
+            TStatistic(x,y,z)    = T;
         <span class="keyword">end</span>
     <span class="keyword">end</span>
 <span class="keyword">end</span>
@@ -156,19 +152,15 @@ TStatistic    = zeros(XDim,YDim,ZDim);
 for x = 1:XDim
     for y = 1:YDim
         for z = 1:ZDim
-            
+            % Calculate results for this voxel
             Con = L * Beta(:,x,y,z);
+            SE  = sqrt(Variance(x,y,z) * (L * iXX * L'));
+            T   = Con / SE;
             
-            % Check we're inside the brain
-            if (~isnan(Con))
-                SE = sqrt(Variance(x,y,z) * (L * iXX * L'));
-                T  = Con / SE;
-                
-                % Save values to images
-                Contrast(x,y,z)      = Con;
-                StandardError(x,y,z) = SE;
-                TStatistic(x,y,z)    = T;         
-            end
+            % Save results to images
+            Contrast(x,y,z)      = Con;
+            StandardError(x,y,z) = SE;
+            TStatistic(x,y,z)    = T;
         end
     end
 end
