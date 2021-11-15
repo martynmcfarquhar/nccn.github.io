@@ -68,8 +68,8 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
   </style></head><body><div class="content"><pre class="codeinput"><span class="comment">% Read image</span>
-Header = niftiinfo(<span class="string">'swRD018_PP012_Encoding.nii'</span>);
-Image  = niftiread(<span class="string">'swRD018_PP012_Encoding.nii'</span>);
+Header = niftiinfo(<span class="string">'func.nii'</span>);
+Image  = niftiread(<span class="string">'func.nii'</span>);
 Image  = double(Image); <span class="comment">% Convert data type</span>
 
 XDim = Header.ImageSize(1);
@@ -122,8 +122,8 @@ niftiwrite(Variance, <span class="string">'Variance.nii'</span>, Header);
 ##### SOURCE BEGIN #####
 
 % Read image
-Header = niftiinfo('swRD018_PP012_Encoding.nii');
-Image  = niftiread('swRD018_PP012_Encoding.nii');
+Header = niftiinfo('func.nii');
+Image  = niftiread('func.nii');
 Image  = double(Image); % Convert data type
 
 XDim = Header.ImageSize(1);
